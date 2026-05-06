@@ -3,7 +3,7 @@
 This repository contains the MATLAB source code for the numerical experiments presented in our research on the **Double Inertial Projection Method** for solving **Inverse Quasi-Variational Inequality Problems (IQVIP)**.
 
 ## Description
-The provided scripts reproduce the comparative numerical results for Example 1 and Example 2, demonstrating the efficiency of the proposed **Algorithm 1** against existing state-of-the-art methods.
+The provided scripts reproduce the comparative numerical results for Example 1, Example 2, and the Application in Traffic Assignment, demonstrating the efficiency of the proposed **Algorithm 1** against existing state-of-the-art methods.
 
 ## Directory Structure
 *   **/Example_1**: Contains the implementation for Example 1, comparing Algorithm 1 with TV Algorithm 5.
@@ -12,6 +12,9 @@ The provided scripts reproduce the comparative numerical results for Example 1 a
 *   **/Example_2**: Contains the implementation for Example 2, comparing Algorithm 1 with HTV Algorithm 25 (Hai et al., 2026).
     *   **Main script:** `DriverEx2.m`
     *   **Parameters:** $L = 2.31$, $\mu = 2$, and $\gamma = 2$.
+*   **/Application_Traffic**: Contains the implementation of the **Traffic Assignment Problem**.
+    *   **Main script:** `DriverTraffic.m` (or your specific filename)
+    *   **Context:** This script demonstrates the practical application of Algorithm 1 in solving inverse quasi-variational inequalities related to traffic flow and equilibrium models.
 
 ## Requirements
 *   MATLAB (R2020a or later recommended)
@@ -19,13 +22,15 @@ The provided scripts reproduce the comparative numerical results for Example 1 a
 
 ## How to Run
 1. Download or clone this repository.
-2. Open MATLAB and navigate to the folder of the example you wish to test.
+2. Open MATLAB and navigate to the folder of the example or application you wish to test.
 3. Run the respective main script:
     *   For Example 1, run `DriverEx1.m`
     *   For Example 2, run `DriverEx2.m`
+    *   For the Traffic Assignment Problem, run `DriverTraffic.m`
 4. The output will display the **number of iterations** and **CPU time** for various initial points as presented in the manuscript.
 
 ## Parameters and Verification
 The parameters in these scripts have been configured to satisfy the convergence conditions of the theorems presented in the paper:
 *   **Example 1:** The matrix $M$ yields eigenvalues $\lambda_1 = 2$ and $\lambda_2 = 2.2$, resulting in $L = 2.2$ and $\mu = 2$.
 *   **Example 2:** The symmetric part of matrix $M$ is $\text{diag}(2.3, 2)$, ensuring $\mu = 2$. The spectral norm is approximately $2.3043$, with $L$ taken as $2.31$.
+*   **Traffic Assignment:** The settings are based on the network topology and cost functions described in the manuscript's Application section.
